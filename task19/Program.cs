@@ -15,12 +15,25 @@ namespace Seminar3
     
         static bool IsPalindrome(int number)
         {
-            string inputNumber = number.ToString();
-            string reversedNumber = "";
+            // string inputNumber = number.ToString();
+            // string reversedNumber = "";
             
-            for (int i = 1; i <= inputNumber.Length; i++) reversedNumber += inputNumber[ inputNumber.Length - i ];
+            // for (int i = 1; i <= inputNumber.Length; i++) reversedNumber += inputNumber[ inputNumber.Length - i ];
             
-            return inputNumber == reversedNumber;
+            // return inputNumber == reversedNumber;
+            
+            int slicedNumber = number;
+            int extractedNumber = 0;
+            int reversedNumber = 0;
+            
+            while (slicedNumber != 0)
+            {
+                extractedNumber = slicedNumber % 10;
+                slicedNumber /= 10;
+                reversedNumber = reversedNumber*10 + extractedNumber;
+            }
+
+            return number == reversedNumber;
 
         }
     }
